@@ -1,16 +1,40 @@
 import React from 'react'
 import './tailwind.css'
+import { useRoutes, BrowserRouter } from "react-router-dom"
+import Home from '../Home'
+import WorksFrontEnd from '../WorksFrontEnd'
+import WorksBackEnd from '../WorksBackEnd'
+import Services from '../Services'
+import Contact from '../Contact'
+// import Api from '../api'
+import About from '../About'
+import NotFound from '../NotFound'
 
 const App = () => {
+
+  const AppRoutes= () => {
+    let routes =useRoutes([
+      {path:'/',element:<Home/>},
+      { path:'/works-frontend',element:<WorksFrontEnd/>},
+      { path:'/Works-backend',element:<WorksBackEnd/>},
+      { path:'/Services',element:<Services/>},
+      { path:'/Contact',element:<Contact/>},
+      // { path:'/api',element:<Api/>}, //!esto no se si dejarlo
+      {path:'/About',element:<About/>},
+      {path:'/*',element:<NotFound/>},   //? el * es para cualquier otra ruta que no este especificada.
+      
+      ])
+      return routes
+  }
+
+
+
   return (
-    <div>App
-         <h1 className="text-3xl font-bold underline bg-red-500">
-      Hello world!
-    </h1>
-    <button className="bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:ring-4 focus:ring-blue-300 shadow-lg hover:shadow-xl focus:shadow-xl text-white font-bold py-2 px-4 rounded">
-      Suscribete
-    </button>
-    </div>
+    
+    <BrowserRouter>
+      <AppRoutes/>
+    </BrowserRouter>
+    
   )
 }
 
