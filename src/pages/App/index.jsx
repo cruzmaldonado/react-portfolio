@@ -17,10 +17,10 @@ const App = () => {
       {path:'/',element:<Home/>},
       { path:'/works-frontend',element:<WorksFrontEnd/>},
       { path:'/Works-backend',element:<WorksBackEnd/>},
-      { path:'/Services',element:<Services/>},
-      { path:'/Contact',element:<Contact/>},
+      { path:'/services',element:<Services/>},
+      { path:'/contact',element:<Contact/>},
       // { path:'/api',element:<Api/>}, //!esto no se si dejarlo
-      {path:'/About',element:<About/>},
+      {path:'/about',element:<About/>},
       {path:'/*',element:<NotFound/>},   //? el * es para cualquier otra ruta que no este especificada.
       
       ])
